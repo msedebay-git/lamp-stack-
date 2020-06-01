@@ -4,6 +4,7 @@ phpMyAdmin comes in the EPEL repository (Extra Packages for Enterprise Linux). T
 
 =============================
 sudo yum install epel-release
+=============================
 
 Now that the EPEL repo is made available, we can proceed to install phpMyAdmin on CentOS 7.
 4. Install phpMyAdmin on CentOS 7
@@ -12,16 +13,19 @@ Issue the following command:
 
 ===========================
 sudo yum install phpmyadmin
+===========================
 
 Once the installation is complete, you will have to edit the phpMyAdmin configuration file.
 5. Configure the phpMyAdmin.conf File
 
 The edit will make sure that you can access your phpMyAdmin client remotely. We’ll open the phpMyAdmin.conf file located in the directory /etc/httpd/conf.d/ using the vim editor:
 
-==================================
+=====================================
 vim /etc/httpd/conf.d/phpMyAdmin.conf
+=====================================
 
-Here you will see four different require ip strings matched with long IPs. The default value is 127.0.0.1. Replace that value with the IP of the machine you will be using to access phpMyAdmin. You can use a tool like WhatsMyIP to check your IP. Save and exit the file by hitting escape and typing in :wq.
+Here you will see four different require ip strings matched with long IPs. The default value is
+ 127.0.0.1. Replace that value with the IP of the machine you will be using to access phpMyAdmin. You can use a tool like WhatsMyIP to check your IP. Save and exit the file by hitting escape and typing in :wq.
 
 You can see an example of the phpMyAdmin.conf file below:
 
@@ -32,6 +36,8 @@ Next we’ll restart the Apache web server by entering the following command in 
 
 =======================
 systemctl restart httpd
+=======================
+
 
 7. Check if phpMyAdmin is Working
 
